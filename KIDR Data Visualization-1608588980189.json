@@ -1,0 +1,499 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 1,
+  "iteration": 1608588957139,
+  "links": [],
+  "panels": [
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 10,
+        "y": 0
+      },
+      "id": 14,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "",
+            "query": "Update Query",
+            "text": "Update Query"
+          }
+        ],
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "7.3.2",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "query-management-button-panel"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 0
+      },
+      "id": 12,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "",
+            "query": "Clear Fields",
+            "text": "Clear Fields"
+          }
+        ],
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "7.3.2",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "query-management-button-panel"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 14,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "",
+            "query": "Execute Query",
+            "text": "Execute Query"
+          }
+        ],
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "7.3.2",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "query-management-button-panel"
+    },
+    {
+      "datasource": "Microsoft SQL Server",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 16,
+        "x": 0,
+        "y": 2
+      },
+      "id": 16,
+      "options": {
+        "showHeader": true
+      },
+      "pluginVersion": "7.3.2",
+      "targets": [
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT * FROM [Neo4jResult].[dbo].[QueryBuilder]",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Query Parameters",
+      "type": "table"
+    },
+    {
+      "datasource": "Microsoft SQL Server",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 15,
+        "w": 16,
+        "x": 0,
+        "y": 9
+      },
+      "id": 2,
+      "interval": "1s",
+      "options": {
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "Request.date"
+          }
+        ]
+      },
+      "pluginVersion": "7.3.2",
+      "targets": [
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT * FROM [Neo4jResult].[dbo].[Query]",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Neo4j Query Results",
+      "type": "table"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 24
+      },
+      "id": 6,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "",
+            "query": "match (request:Request) -[rel:COMES_FROM]-> (mtf:MTF)\nreturn mtf.name as `MTF`, count(rel) as `Outgoing Requests` order by count(rel) desc",
+            "text": "MTF Outgoing Requests"
+          }
+        ],
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "7.3.2",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 24
+      },
+      "id": 8,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "",
+            "query": "match (d:Diagnosis) -[rel]- (r:Request)\nreturn d.name as `Diagnosis`, count(rel) as `Requests` order by count(rel) desc",
+            "text": "Diagnosis Count"
+          }
+        ],
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "7.3.2",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 3,
+        "x": 4,
+        "y": 24
+      },
+      "id": 10,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "",
+            "query": "match (m:Medication) -[rel]- (r:Request) -[rel2:PRIMARY_DIAGNOSIS]- (d:Diagnosis)\nreturn d.name as `Diagnosis`, count(rel) as `Requests`, m.name as `Perscription` order by count(rel) desc",
+            "text": "Diagnosis Prescription Matching"
+          }
+        ],
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "7.3.2",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 26
+      },
+      "id": 20,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "",
+            "query": "match (request:Request) -[rel:ARRIVES_AT]-> (mtf:MTF)\nreturn mtf.name as `MTF`, count(rel) as `Incoming Requests` order by count(rel) desc",
+            "text": "MTF Incoming Requests"
+          }
+        ],
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "7.3.2",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "speakyourcode-button-panel"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 26
+      },
+      "id": 18,
+      "options": {
+        "buttons": [
+          {
+            "datasource": "",
+            "query": "match (m:Medication) -[rel]- (r:Request)\nreturn m.name as `Medication`, count(rel) as `Requests` order by count(rel) desc",
+            "text": "Medication Count"
+          }
+        ],
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "7.3.2",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "speakyourcode-button-panel"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 26,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "Subject",
+          "value": "Subject"
+        },
+        "error": null,
+        "hide": 0,
+        "label": null,
+        "name": "Node_One",
+        "options": [
+          {
+            "selected": false,
+            "text": "MTF",
+            "value": "MTF"
+          }
+        ],
+        "query": "Subject",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "ABOUT",
+          "value": "ABOUT"
+        },
+        "error": null,
+        "hide": 0,
+        "label": null,
+        "name": "Relationship",
+        "options": [
+          {
+            "selected": false,
+            "text": "COMES_FROM",
+            "value": "COMES_FROM"
+          }
+        ],
+        "query": "ABOUT",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "Request",
+          "value": "Request"
+        },
+        "error": null,
+        "hide": 0,
+        "label": null,
+        "name": "Node_Two",
+        "options": [
+          {
+            "selected": true,
+            "text": "Request",
+            "value": "Request"
+          }
+        ],
+        "query": "Request",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "",
+          "value": ""
+        },
+        "error": null,
+        "hide": 0,
+        "label": null,
+        "name": "Constraints",
+        "options": [
+          {
+            "selected": true,
+            "text": "",
+            "value": ""
+          }
+        ],
+        "query": "",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "",
+          "value": ""
+        },
+        "error": null,
+        "hide": 0,
+        "label": null,
+        "name": "Properties",
+        "options": [
+          {
+            "selected": true,
+            "text": "",
+            "value": ""
+          }
+        ],
+        "query": "",
+        "skipUrlSync": false,
+        "type": "textbox"
+      }
+    ]
+  },
+  "time": {
+    "from": "1970-01-01T00:00:00.000Z",
+    "to": "1970-01-01T00:00:00.000Z"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "KIDR Data Visualization",
+  "uid": "ILcGBdTMz",
+  "version": 17
+}
