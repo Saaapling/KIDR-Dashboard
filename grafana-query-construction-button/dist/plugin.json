@@ -1,0 +1,30 @@
+{
+  "type": "panel",
+  "name": "Query Management Button",
+  "id": "query-management-button-panel",
+  "info": {
+    "description": "Button Control Panel",
+    "author": {
+      "name": "Willowsap",
+      "url": ""
+    },
+    "keywords": [ "button", "control", "input" ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/speakyourcode/grafana-button-panel"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=7.0.0",
+    "plugins": []
+  }
+}
